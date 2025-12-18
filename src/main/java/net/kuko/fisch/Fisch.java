@@ -1,7 +1,11 @@
 package net.kuko.fisch;
 
 import com.mojang.logging.LogUtils;
+import net.kapitencraft.kap_lib.KapLibMod;
+import net.kuko.fisch.item.ModItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.JukeboxBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -18,22 +22,27 @@ import org.slf4j.Logger;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Fisch.MOD_ID)
 public class Fisch {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "fisch";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-        public Fisch(FMLJavaModLoadingContext context) {
-            IEventBus eventBus = context.getModEventBus();
+    public static ResourceLocation rl(String s) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
+    }
 
-            eventBus.addListener(this::commonSetup);
+    public Fisch(FMLJavaModLoadingContext context) {
+        IEventBus eventBus = context.getModEventBus();
+        eventBus.addListener(this::commonSetup);
 
-            // Regs!
 
 
-            MinecraftForge.EVENT_BUS.register(this);
-            eventBus.addListener(this::addCreative);
-            context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-        }
+        // Regs!
+        ModItems.register(eventBus);
+
+        MinecraftForge.EVENT_BUS.register(this);
+
+        eventBus.addListener(this::addCreative);
+        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
