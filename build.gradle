@@ -140,10 +140,11 @@ repositories {
 
 dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    modImplementation "maven.modrinth:kap_lib:${kaplib_version}-mc${minecraft_version}"
 
-    compileOnly "org.appliedenergistics:guideme:${guideme_version}:api"
-    runtimeOnly "org.appliedenergistics:guideme:${guideme_version}"
+    // NOTE: Fucked up.
+//    modImplementation "maven.modrinth:kap_lib:${kaplib_version}-mc${minecraft_version}"
+//    compileOnly "org.appliedenergistics:guideme:${guideme_version}:api"
+//    runtimeOnly "org.appliedenergistics:guideme:${guideme_version}"
 }
 
 // Uncomment the lines below if you wish to configure mixin. The mixin file should be named modid.mixins.json.

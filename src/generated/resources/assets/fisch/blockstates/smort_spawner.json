@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "fisch:block/smort_spawner"
+    }
+  }
+}
