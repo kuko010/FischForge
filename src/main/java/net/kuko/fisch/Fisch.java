@@ -1,7 +1,9 @@
 package net.kuko.fisch;
 
 import com.mojang.logging.LogUtils;
-import net.kapitencraft.kap_lib.KapLibMod;
+//import net.kapitencraft.kap_lib.KapLibMod;
+import net.kuko.fisch.block.ModBlocks;
+import net.kuko.fisch.block.entity.ModBlockEntities;
 import net.kuko.fisch.item.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -34,9 +36,10 @@ public class Fisch {
         eventBus.addListener(this::commonSetup);
 
 
-
         // Regs!
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
+        ModBlockEntities.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
