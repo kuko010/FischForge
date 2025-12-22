@@ -1,4 +1,4 @@
-package net.kuko.fisch;
+package net.kuko.fisch.util;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
