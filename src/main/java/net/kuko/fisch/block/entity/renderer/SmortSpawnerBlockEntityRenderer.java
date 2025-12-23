@@ -27,6 +27,9 @@ public class SmortSpawnerBlockEntityRenderer implements BlockEntityRenderer<Smor
     }
 
 
+
+
+
     @Override
     public void render(SmortSpawnerBlockEntity blockEntity, float partialTick,
                        PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
@@ -34,7 +37,7 @@ public class SmortSpawnerBlockEntityRenderer implements BlockEntityRenderer<Smor
         ItemStack stack = new ItemStack(Items.DIAMOND, 1);
 
         poseStack.pushPose();
-        poseStack.translate(0,0,0);
+        poseStack.translate(0,1,1);
         poseStack.scale(1,1,1);
         EntityRenderDispatcher dispatcher = Minecraft.getInstance().getEntityRenderDispatcher();
         dispatcher.render(new Zombie(blockEntity.getLevel()),0.5,0.5,0.5, 0,

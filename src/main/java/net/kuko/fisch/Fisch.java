@@ -25,7 +25,7 @@ import org.slf4j.Logger;
 @Mod(Fisch.MOD_ID)
 public class Fisch {
     public static final String MOD_ID = "fisch";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public static ResourceLocation rl(String s) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);

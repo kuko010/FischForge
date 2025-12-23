@@ -139,7 +139,11 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    modImplementation "maven.modrinth:jade:11.13.2+forge"
+
+    // NOTE: Jusstttt Remove it for some time
+//    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     // NOTE: Fucked up.
 //    modImplementation "maven.modrinth:kap_lib:${kaplib_version}-mc${minecraft_version}"
@@ -149,10 +153,10 @@ dependencies {
 
 // Uncomment the lines below if you wish to configure mixin. The mixin file should be named modid.mixins.json.
 
-mixin {
-//    add sourceSets.main, "${mod_id}.refmap.json"
-    config "${mod_id}.mixins.json"
-}
+//mixin {
+////    add sourceSets.main, "${mod_id}.refmap.json"
+//    config "${mod_id}.mixins.json"
+//}
 
 //jar {
 //    manifest.attributes([
