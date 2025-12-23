@@ -30,6 +30,27 @@ public class SmortSpawner extends BaseEntityBlock {
         return RenderShape.MODEL;
     }
     // Logic
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
+                                 InteractionHand hand, BlockHitResult hit) {
+        if (!level.isClientSide) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity instanceof SmortSpawnerBlockEntity smortSpawnerBlockEntity) {
+                ItemStack stack = player.getMainHandItem();
+                ItemStackHandler inventory = smortSpawnerBlockEntity.inventory;
+                for (int i = 0; i < inventory.getSlots(); i++) {
+                    Fisch.LOGGER.info(String.valueOf(inventory.getStackInSlot(i)));
+                }
+
+            }
+        }
+
+        return InteractionResult.sidedSuccess(level.isClientSide());
+    }
+
+
+
     // ...
     // End Logic
 
