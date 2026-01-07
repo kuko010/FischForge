@@ -1,7 +1,6 @@
-package net.kuko.fisch.client;
+package net.kuko.fisch;
 
 
-import net.kuko.fisch.Fisch;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;

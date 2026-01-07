@@ -2,8 +2,11 @@ package net.kuko.fisch;
 
 import com.mojang.logging.LogUtils;
 //import net.kapitencraft.kap_lib.KapLibMod;
+import net.kuko.fisch.fishentry.FishProperties;
 import net.kuko.fisch.registries.ModBlocks;
 import net.kuko.fisch.registries.ModItems;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,6 +20,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DataPackRegistryEvent;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -65,5 +69,19 @@ public class Fisch {
         public static void onClientSetup(FMLClientSetupEvent event) {
             LOGGER.info("HELLO FROM CLIENT SETUP");
         }
+    }
+
+
+    // Because of Fish Entry
+    public static final ResourceKey<Registry<FishProperties>> FISH_REGISTRY =
+            ResourceKey.createRegistryKey(rl("fish"));
+
+    // Because of Fish Entry
+    @SubscribeEvent
+    public static void addRegistries(DataPackRegistryEvent.NewRegistry event) {
+        event.dataPackRegistry(
+                FISH_REGISTRY,
+                FishProperties.CODEC
+        );
     }
 }

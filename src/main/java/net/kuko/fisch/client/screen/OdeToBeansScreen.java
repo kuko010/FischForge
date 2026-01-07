@@ -1,4 +1,4 @@
-package net.kuko.fisch;
+package net.kuko.fisch.client.screen;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
