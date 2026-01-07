@@ -2,12 +2,10 @@ package net.kuko.fisch;
 
 import com.mojang.logging.LogUtils;
 //import net.kapitencraft.kap_lib.KapLibMod;
-import net.kuko.fisch.block.ModBlocks;
-import net.kuko.fisch.block.entity.ModBlockEntities;
-import net.kuko.fisch.item.ModItems;
+import net.kuko.fisch.registries.ModBlocks;
+import net.kuko.fisch.registries.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.JukeboxBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -39,7 +37,7 @@ public class Fisch {
         // Regs!
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
-        ModBlockEntities.register(eventBus);
+//        ModBlockEntities.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -52,7 +50,7 @@ public class Fisch {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.SMORT_SPAWNER.get());
+//            event.accept(ModBlocks.SMORT_SPAWNER.get());
         }
     }
 

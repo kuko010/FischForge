@@ -1,13 +1,10 @@
-package net.kuko.fisch.block;
+package net.kuko.fisch.registries;
 
 import net.kuko.fisch.Fisch;
-import net.kuko.fisch.block.custom.SmortSpawner;
-import net.kuko.fisch.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SpawnerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -19,11 +16,6 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Fisch.MOD_ID);
-
-    public static final RegistryObject<Block> SMORT_SPAWNER = registerBlock("smort_spawner",
-            () -> new SmortSpawner(BlockBehaviour.Properties.copy(Blocks.SPAWNER)
-                        .noOcclusion()));
-
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

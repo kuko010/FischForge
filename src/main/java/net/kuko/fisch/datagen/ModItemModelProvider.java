@@ -1,9 +1,8 @@
 package net.kuko.fisch.datagen;
 
 import net.kuko.fisch.Fisch;
-import net.kuko.fisch.item.ModItems;
+import net.kuko.fisch.registries.ModItems;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;

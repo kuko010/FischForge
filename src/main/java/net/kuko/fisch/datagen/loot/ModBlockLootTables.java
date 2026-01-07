@@ -1,12 +1,9 @@
 package net.kuko.fisch.datagen.loot;
 
-import net.kuko.fisch.block.ModBlocks;
+import net.kuko.fisch.registries.ModBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -18,8 +15,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.add(ModBlocks.SMORT_SPAWNER.get(),
-                block -> noDrop());
+//        this.add(ModBlocks.SMORT_SPAWNER.get(),
+//                block -> noDrop());
     }
 
     @Override
