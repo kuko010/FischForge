@@ -18,7 +18,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.LIGHT_ITEM);
+//        simpleItem(ModItems.LIGHT_ITEM);
     }
 
 

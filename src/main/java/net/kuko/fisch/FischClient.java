@@ -9,8 +9,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class FischClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-
-
-
+        Fisch.LOGGER.info("HELLO FROM CLIENT SETUP");
     }
 }

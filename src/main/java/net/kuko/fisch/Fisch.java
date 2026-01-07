@@ -52,25 +52,12 @@ public class Fisch {
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-//            event.accept(ModBlocks.SMORT_SPAWNER.get());
-        }
-    }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) { if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) ; }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("HELLO from server starting");
     }
-
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-        }
-    }
-
 
     // Because of Fish Entry
     public static final ResourceKey<Registry<FishProperties>> FISH_REGISTRY =
