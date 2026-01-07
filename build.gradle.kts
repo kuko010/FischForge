@@ -159,6 +159,13 @@ dependencies {
     // Mekanism
     compileOnly("mekanism:Mekanism:${project.property("mekanism_version")}:api")
 
+    implementation("com.lowdragmc.ldlib:ldlib-forge-${project.property("minecraft_version")}:${project.property("ldlib")}") {
+        isTransitive = false
+    }
+    implementation("com.lowdragmc.multiblocked2:Multiblocked2:${project.property("minecraft_version")}-${project.property("multiblocked")}") {
+        isTransitive = false
+    }
+
     // If you want to test/use Mekanism & its modules during `runClient` invocation, use the following
     runtimeOnly("mekanism:Mekanism:${project.property("mekanism_version")}")// Mekanism
     runtimeOnly("mekanism:Mekanism:${project.property("mekanism_version")}:additions")// Mekanism: Additions
